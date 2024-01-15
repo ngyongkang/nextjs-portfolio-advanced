@@ -25,7 +25,7 @@ export default function About({}: Props) {
         src="hero.png"
         className="
         -mb-20 flex-shrink-0 w-56 h-56 rounded-full object-cover
-        md:rounded-lg md:mb-0 md:w-64 md:h-96 
+        md:rounded-lg md:mb-0 md:w-64 md:h-96 md:ml-20
         xl:w-[500px] xl:h-[600px]"
       />
       <div className="space-y-10 px-0 md:px-10">
