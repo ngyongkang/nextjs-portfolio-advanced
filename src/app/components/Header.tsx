@@ -2,6 +2,7 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
+import { transparent } from "tailwindcss/colors";
 type Props = {};
 
 export default function Header({}: Props) {
@@ -19,12 +20,14 @@ export default function Header({}: Props) {
         {/* Social Icons */}
         <SocialIcon
           url="https://linkedin.com/in/ng-yong-kang-a60871193"
-          fgColor="gray"
+          className="socialIcons"
+          fgColor="currentColor"
           bgColor="transparent"
         />
         <SocialIcon
           url="https://github.com/ngyongkang"
-          fgColor="gray"
+          className="socialIcons"
+          fgColor="currentColor"
           bgColor="transparent"
         />
       </motion.div>
@@ -33,16 +36,16 @@ export default function Header({}: Props) {
         initial={{ x: 500, opacity: 0, scale: 0.5 }}
         animate={{ x: 0, opacity: 1, scale: 1 }}
         transition={{ duration: 1.5 }}
-        className="flex flex-row items-center text-gray-300 cursor-pointer"
+        className="flex flex-row items-center text-secondary-300 cursor-pointer"
       >
         {/* Social Icons */}
         <SocialIcon
-          className="cursor-pointer"
+          className="cursor-pointer socialIcons"
           network="email"
-          fgColor="gray"
+          fgColor="currentColor"
           bgColor="transparent"
         />
-        <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
+        <p className="uppercase hidden md:inline-flex text-sm text-secondary-400">
           Get In Touch
         </p>
       </motion.div>

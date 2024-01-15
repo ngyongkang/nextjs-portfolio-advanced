@@ -17,10 +17,9 @@ const config: Config = {
     colors: {
       ...colors,
       primary: colors.blue,
-      secondary: colors.red,
-      background: "#363636",
-      mainText: colors.white,
-      bgCircle: colors.gray
+      secondary: colors.cyan,
+      background: colors.gray,
+      mainText: colors.white
     }
   },
   plugins: [],

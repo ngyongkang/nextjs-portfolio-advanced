@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className=" bg-background text-mainText h-screen 
+      className=" bg-background-600 text-mainText h-screen 
       snap-y snap-mandatory overflow-scroll z-0"
     >
       <body className={inter.className}>{children}</body>

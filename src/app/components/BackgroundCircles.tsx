@@ -20,7 +20,7 @@ export default function BackgroundCircles({}: Props) {
       className="relative flex justify-center items-center"
     >
       <div
-        className="absolute rounded-full border border-bgCircle-500
+        className="absolute rounded-full border border-background-500
       h-[200px] w-[200px] mt-52 animate-ping"
       />
       <div
@@ -36,7 +36,7 @@ export default function BackgroundCircles({}: Props) {
       opacity-20 h-[650px] w-[650px] mt-52 animate-pulse"
       />
       <div
-        className="absolute rounded-full border border-bgCircle-500
+        className="absolute rounded-full border border-background-500
       opacity-20 h-[800px] w-[800px] mt-52"
       />
     </motion.div>
