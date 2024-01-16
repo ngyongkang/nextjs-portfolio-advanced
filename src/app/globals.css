@@ -10,4 +10,10 @@
     .socialIcons .social-svg-icon {
         @apply fill-secondary-500 !important
     }
+
+    .contactInput {
+        @apply outline-none bg-background-500/10 rounded-sm border-b border-background-500 
+        px-6 py-4 text-background-400 placeholder-background-300 
+        transition-all focus:border-secondary-400/40 focus:text-secondary-400/40 hover:border-secondary-400/40
+    }
 }

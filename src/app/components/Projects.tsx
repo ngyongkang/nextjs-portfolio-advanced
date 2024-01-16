@@ -1,9 +1,7 @@
 "use client";
-import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { ProjectProps } from "../data/types";
 import { projects } from "../data/staticData";
+import { ProjectProps } from "../data/types";
 
 type Props = {};
 
@@ -61,7 +59,6 @@ function Project({ imgUrl, title, description }: ProjectProps) {
         src={imgUrl}
         alt="project image"
       />
-      {/* <Image src={imgUrl} alt="project image" /> */}
       <div className="space-y-10 px-0 md:px-10 max-w-6xl">
         <h4 className="text-4xl font-semibold text-center">{title}</h4>
         <p className="text-lg text-center md:text-left">{description}</p>

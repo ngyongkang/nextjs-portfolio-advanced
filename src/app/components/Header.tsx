@@ -1,8 +1,6 @@
 "use client";
-import React from "react";
-import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
-import { transparent } from "tailwindcss/colors";
+import { SocialIcon } from "react-social-icons";
 type Props = {};
 
 export default function Header({}: Props) {
