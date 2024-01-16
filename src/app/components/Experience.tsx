@@ -1,54 +1,10 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import ExperienceCard, { CardDetails } from "./ExperienceCard";
+import { experiences } from "../data/staticData";
+import ExperienceCard from "./ExperienceCard";
 
 type Props = {};
-
-const experiences: CardDetails[] = [
-  {
-    company: "ST-Engineering",
-    jobTitle: "Software Engineer",
-    techUsed: [
-      { icon: "devicon-javascript-plain", color: "text-yellow-500" },
-      { icon: "devicon-html5-plain", color: "text-orange-500" },
-      { icon: "devicon-css3-plain", color: "text-cyan-500" },
-    ],
-    dates: ["Feb 2022", "Dec 2023"],
-    points: [
-      "Built a Devs Op platform to perform CICD for department.",
-      "Did a government project and perform various software integration.",
-    ],
-  },
-  {
-    company: "ST-Engineering",
-    jobTitle: "Software Engineer",
-    techUsed: [
-      { icon: "devicon-javascript-plain", color: "text-yellow-500" },
-      { icon: "devicon-html5-plain", color: "text-orange-500" },
-      { icon: "devicon-css3-plain", color: "text-cyan-500" },
-    ],
-    dates: ["Feb 2022", "Dec 2023"],
-    points: [
-      "Built a Devs Op platform to perform CICD for department.",
-      "Did a government project and perform various software integration.",
-    ],
-  },
-  {
-    company: "ST-Engineering",
-    jobTitle: "Software Engineer",
-    techUsed: [
-      { icon: "devicon-javascript-plain", color: "text-yellow-500" },
-      { icon: "devicon-html5-plain", color: "text-orange-500" },
-      { icon: "devicon-css3-plain", color: "text-cyan-500" },
-    ],
-    dates: ["Feb 2022", "Dec 2023"],
-    points: [
-      "Built a Devs Op platform to perform CICD for department.",
-      "Did a government project and perform various software integration.",
-    ],
-  },
-];
 
 export default function Experience({}: Props) {
   return (

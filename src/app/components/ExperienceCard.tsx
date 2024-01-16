@@ -1,18 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-export type CardDetails = {
-  company: string;
-  jobTitle: string;
-  techUsed: Skill[];
-  dates: string[];
-  points: string[];
-};
-
-export type Skill = {
-  icon: string;
-  color: string;
-};
+import { CardProps } from "../data/types";
 
 export default function ExperienceCard({
   company,
@@ -20,7 +8,7 @@ export default function ExperienceCard({
   techUsed,
   dates,
   points,
-}: CardDetails) {
+}: CardProps) {
   return (
     <article
       className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 
@@ -46,7 +34,7 @@ export default function ExperienceCard({
             return (
               <i
                 key={index}
-                className={`${skill.icon} ${skill.color} h-10 w-10 text-4xl rounded-full`}
+                className={`${skill.icon} h-10 w-10 text-4xl rounded-full`}
               ></i>
             );
           })}
