@@ -1,4 +1,4 @@
-import { CardProps, SkillProps } from "./types";
+import { CardProps, SkillProps, ProjectProps } from "./types";
 
 /* 
     Variable to contain icon with color.
@@ -152,5 +152,38 @@ export const experiences: CardProps[] = [
       "Built a Devs Op platform to perform CICD for department.",
       "Did a government project and perform various software integration.",
     ],
+  },
+];
+
+export const projects: ProjectProps[] = [
+  {
+    imgUrl: "/projects/1.png",
+    title: "Next JS Portfolio",
+    description:
+      "First next js application made, was built in Javascript and used Tailwind CSS for styling. Set up a email server as well using my personal domain.",
+  },
+  {
+    imgUrl: "/projects/1.png",
+    title: "Next JS Portfolio",
+    description:
+      "First next js application made, was built in Javascript and used Tailwind CSS for styling. Set up a email server as well using my personal domain.",
+  },
+  {
+    imgUrl: "/projects/1.png",
+    title: "Next JS Portfolio",
+    description:
+      "First next js application made, was built in Javascript and used Tailwind CSS for styling. Set up a email server as well using my personal domain.",
+  },
+  {
+    imgUrl: "/projects/1.png",
+    title: "Next JS Portfolio",
+    description:
+      "First next js application made, was built in Javascript and used Tailwind CSS for styling. Set up a email server as well using my personal domain.",
+  },
+  {
+    imgUrl: "/projects/1.png",
+    title: "Next JS Portfolio",
+    description:
+      "First next js application made, was built in Javascript and used Tailwind CSS for styling. Set up a email server as well using my personal domain.",
   },
 ];

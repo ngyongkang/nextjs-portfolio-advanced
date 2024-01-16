@@ -15,6 +15,7 @@ export default function Skill({ direction, icon, proficiency }: SkillProps) {
         }}
         transition={{ duration: 1 }}
         whileInView={{ opacity: 1, x: 0, y: 0 }}
+        viewport={{ once: true }}
         onAnimationComplete={() => setAniState(true)}
         className={`${icon}
                     w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32

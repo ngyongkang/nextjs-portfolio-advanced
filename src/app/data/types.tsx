@@ -11,3 +11,9 @@ export type CardProps = {
   dates: string[];
   points: string[];
 };
+
+export type ProjectProps = {
+  imgUrl: string;
+  title: string;
+  description: string;
+};
