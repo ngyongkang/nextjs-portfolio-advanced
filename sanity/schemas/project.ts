@@ -29,10 +29,5 @@ export default defineType({
       type: "array",
       of: [{type: "reference", to: {type: "skill"}}]
     }),
-    defineField({
-      name: 'linkToBuild',
-      title: 'LinktoBuild',
-      type: "url",
-    }),
   ],
 })

@@ -18,7 +18,7 @@ export default defineType({
     defineField({
       name: 'heroImage',
       title: 'HeroImage',
-      type: 'image',
+      type: 'SanityImageSource',
       options : {
         hotspot: true,
       }
@@ -31,7 +31,7 @@ export default defineType({
     defineField({
       name: 'profilePic',
       title: 'ProfilePic',
-      type: 'image',
+      type: 'SanityImageSource',
       options : {
         hotspot: true,
       }

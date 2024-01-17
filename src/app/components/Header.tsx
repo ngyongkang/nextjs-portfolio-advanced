@@ -1,9 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
 import { SocialIcon } from "react-social-icons";
-type Props = {};
+import { Social } from "../../../typings";
+type Props = { socials: Social[] };
 
-export default function Header({}: Props) {
+export default function Header({ socials }: Props) {
   return (
     <header
       className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20
@@ -16,18 +17,17 @@ export default function Header({}: Props) {
         className="flex flex-row items-center"
       >
         {/* Social Icons */}
-        <SocialIcon
-          url="https://linkedin.com/in/ng-yong-kang-a60871193"
-          className="socialIcons"
-          fgColor="currentColor"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://github.com/ngyongkang"
-          className="socialIcons"
-          fgColor="currentColor"
-          bgColor="transparent"
-        />
+        {socials.map(function (social) {
+          return (
+            <SocialIcon
+              key={social._id}
+              url={social.url}
+              className="socialIcons"
+              fgColor="currentColor"
+              bgColor="transparent"
+            />
+          );
+        })}
       </motion.div>
 
       <motion.div

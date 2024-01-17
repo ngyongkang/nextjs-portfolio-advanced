@@ -1,37 +1,33 @@
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Experience from "./components/Experience";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Projects from "./components/Projects";
-import Skills from "./components/Skills";
+"use server";
+import { Experience, PageInfo, Project, Skill, Social } from "../../typings";
+import {
+  fetchExperience,
+  fetchPageInfo,
+  fetchProject,
+  fetchSkills,
+  fetchSocial,
+} from "./utils/fetchData";
+import { headers } from "next/headers";
+import Homepage from "./Homepage";
 
-export default function Home() {
+export default async function Page() {
+  const headersList = headers();
+  const fullUrl = headersList.get("referer");
+
+  const pageInfo: PageInfo = await fetchPageInfo(fullUrl);
+  const experiences: Experience[] = await fetchExperience(fullUrl);
+  const skills: Skill[] = await fetchSkills(fullUrl);
+  const projects: Project[] = await fetchProject(fullUrl);
+  const socials: Social[] = await fetchSocial(fullUrl);
+
+  // const data = await getData();
   return (
-    <main>
-      <div>
-        <Header />
-        <section id="hero" className="snap-start">
-          <Hero />
-        </section>
-        <section id="about" className="snap-center">
-          <About />
-        </section>
-        <section id="experience" className="snap-center">
-          <Experience />
-        </section>
-        <section id="skills" className="snap-start">
-          <Skills />
-        </section>
-        <section id="projects" className="snap-start">
-          <Projects />
-        </section>
-        <section id="contact" className="snap-end">
-          <Contact />
-        </section>
-        <Footer />
-      </div>
-    </main>
+    <Homepage
+      pageInfo={pageInfo}
+      experiences={experiences}
+      skills={skills}
+      projects={projects}
+      socials={socials}
+    />
   );
 }
