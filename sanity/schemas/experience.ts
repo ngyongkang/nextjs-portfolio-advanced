@@ -13,7 +13,7 @@ export default defineType({
     defineField({
       name: 'companyImage',
       title: 'Company Image',
-      type: 'SanityImageSource',
+      type: 'image',
       options : {
         hotspot: true,
       }

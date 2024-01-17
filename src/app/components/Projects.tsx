@@ -1,11 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
-import { projects } from "../data/staticData";
-import { ProjectProps } from "../data/types";
+import { Project } from "../../../typings";
+import { urlForImage } from "../../../sanity/lib/image";
 
-type Props = {};
+type Props = { projects: Project[] };
 
-export default function Projects({}: Props) {
+export default function Projects({ projects }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -26,14 +26,7 @@ export default function Projects({}: Props) {
       scrollbar-thin scrollbar-track-background-400/20 scrollbar-thumb-secondary-500"
       >
         {projects.map(function (project, index) {
-          return (
-            <Project
-              key={index}
-              imgUrl={project.imgUrl}
-              title={project.title}
-              description={project.description}
-            />
-          );
+          return <ProjectComponent key={index} project={project} />;
         })}
       </div>
 
@@ -45,7 +38,11 @@ export default function Projects({}: Props) {
   );
 }
 
-function Project({ imgUrl, title, description }: ProjectProps) {
+type Props2 = {
+  project: Project;
+};
+
+function ProjectComponent({ project }: Props2) {
   return (
     <div
       className="w-screen h-screen 
@@ -57,12 +54,12 @@ function Project({ imgUrl, title, description }: ProjectProps) {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5 }}
         viewport={{ once: true }}
-        src={imgUrl}
+        src={urlForImage(project?.image)}
         alt="project image"
       />
       <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-        <h4 className="text-4xl font-semibold text-center">{title}</h4>
-        <p className="text-lg text-center md:text-left">{description}</p>
+        <h4 className="text-4xl font-semibold text-center">{project.title}</h4>
+        <p className="text-lg text-center md:text-left">{project.summary}</p>
       </div>
     </div>
   );

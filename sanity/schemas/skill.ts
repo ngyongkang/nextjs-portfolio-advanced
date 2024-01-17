@@ -23,5 +23,10 @@ export default defineType({
       title: 'Icon',
       type: 'string',
     }),
+    defineField({
+      name: 'direction',
+      title: 'direction',
+      type: 'string',
+    }),
   ],
 })

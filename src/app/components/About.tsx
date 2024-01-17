@@ -1,10 +1,12 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { PageInfo } from "../../../typings";
+import { urlForImage } from "../../../sanity/lib/image";
 
-type Props = {};
+type Props = { pageInfo: PageInfo };
 
-export default function About({}: Props) {
+export default function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -22,7 +24,7 @@ export default function About({}: Props) {
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1.2 }}
-        src="hero.png"
+        src={urlForImage(pageInfo?.profilePic)}
         className="
         -mb-20 flex-shrink-0 w-56 h-56 rounded-full object-cover
         md:rounded-lg md:mb-0 md:w-64 md:h-96 md:ml-20
@@ -34,17 +36,7 @@ export default function About({}: Props) {
           <span className="underline decoration-primary-500">little</span>{" "}
           background
         </h4>
-        <p className="text-base">
-          I am a full-stack developer, who worked in this industry for two years
-          now. I strive to learn new tech stacks and expand my horizons. Even
-          though I have not been on many projects yet. I have learnt from my
-          past experiences that teamwork is key and believe in working together
-          to achieve a better product.
-          <br />
-          <br />I love coding languages that provide Object Oriented Programming
-          such as Java because I like piecing various objects together like a
-          puzzle.
-        </p>
+        <p className="text-base">{pageInfo.backgroundInformation}</p>
       </div>
     </motion.div>
   );

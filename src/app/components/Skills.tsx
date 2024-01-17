@@ -1,12 +1,11 @@
 "use client";
-import React from "react";
 import { motion } from "framer-motion";
-import { skills } from "../data/staticData";
-import Skill from "./Skill";
+import { Skill } from "../../../typings";
+import SkillComponent from "./Skill";
 
-type Props = {};
+type Props = { skills: Skill[] };
 
-export default function Skills({}: Props) {
+export default function Skills({ skills }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -29,11 +28,11 @@ export default function Skills({}: Props) {
       <div className="grid grid-cols-4 gap-5 grid-flow-row">
         {skills.map(function (skill, index) {
           return (
-            <Skill
+            <SkillComponent
               key={index}
               icon={skill.icon}
               direction={skill.direction}
-              proficiency={skill.proficiency}
+              proficiency={skill.progress}
             />
           );
         })}

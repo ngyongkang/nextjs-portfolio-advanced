@@ -1,12 +1,13 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { experiences } from "../data/staticData";
+// import { experiences } from "../data/staticData";
 import ExperienceCard from "./ExperienceCard";
+import { Experience } from "../../../typings";
 
-type Props = {};
+type Props = { experiences: Experience[] };
 
-export default function Experience({}: Props) {
+export default function Experience({ experiences }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -25,16 +26,7 @@ export default function Experience({}: Props) {
         overflow-x-scroll scrollbar scrollbar-track-background-400/20 scrollbar-thumb-secondary-500"
       >
         {experiences.map(function (experience, index) {
-          return (
-            <ExperienceCard
-              key={index}
-              company={experience.company}
-              jobTitle={experience.jobTitle}
-              techUsed={experience.techUsed}
-              dates={experience.dates}
-              points={experience.points}
-            />
-          );
+          return <ExperienceCard key={index} experience={experience} />;
         })}
       </div>
     </motion.div>

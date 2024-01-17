@@ -1,14 +1,25 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { CardProps } from "../data/types";
+// import { CardProps } from "../data/types";
+import { Experience } from "../../../typings";
+import { urlForImage } from "../../../sanity/lib/image";
 
-export default function ExperienceCard({
-  company,
-  jobTitle,
-  techUsed,
-  dates,
-  points,
-}: CardProps) {
+type Props = {
+  experience: Experience;
+};
+
+export default function ExperienceCard({ experience }: Props) {
+  const {
+    company,
+    companyImage,
+    jobTitle,
+    technologies,
+    dateStarted,
+    dateEnded,
+    isCurrentlyWorkingHere,
+    points,
+  } = experience;
+
   return (
     <article
       className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 
@@ -21,7 +32,7 @@ export default function ExperienceCard({
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1.2 }}
-        src="/hero.png"
+        src={urlForImage(companyImage)}
         alt="Experience Image"
         className="w-32 h-32 rounded-full  object-cover object-center xl:w-[200px] xl:h-[200px]"
       />
@@ -30,7 +41,7 @@ export default function ExperienceCard({
         <h4 className="text-4xl font-light">{company}</h4>
         <p>{jobTitle}</p>
         <div className="flex space-x-2 my-2">
-          {techUsed.map(function (skill, index) {
+          {technologies.map(function (skill, index) {
             return (
               <i
                 key={index}
@@ -40,7 +51,7 @@ export default function ExperienceCard({
           })}
         </div>
         <p className="uppercase py-5">
-          {dates[0]} - {dates[1]}
+          {dateStarted} - {dateEnded}
         </p>
 
         <ul className="list-disc space-y-4 ml-5 text-lg">

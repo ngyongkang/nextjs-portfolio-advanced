@@ -29,7 +29,6 @@ export default function Header({ socials }: Props) {
           );
         })}
       </motion.div>
-
       <motion.div
         initial={{ x: 500, opacity: 0, scale: 0.5 }}
         animate={{ x: 0, opacity: 1, scale: 1 }}
@@ -38,14 +37,17 @@ export default function Header({ socials }: Props) {
       >
         {/* Social Icons */}
         <SocialIcon
+          url="#contact"
           className="cursor-pointer socialIcons"
           network="email"
           fgColor="currentColor"
           bgColor="transparent"
         />
-        <p className="uppercase hidden md:inline-flex text-sm text-secondary-400">
-          Get In Touch
-        </p>
+        <a href="#contact">
+          <p className="uppercase hidden md:inline-flex text-sm text-secondary-400">
+            Get In Touch
+          </p>
+        </a>
       </motion.div>
     </header>
   );
