@@ -9,19 +9,19 @@ async function fetchSkills(url: any) {
 }
 
 async function fetchSocial(url: any) {
-    const res = await fetch("http://localhost:3000/api/social").then((res) => {return res.json()});
+    const res = await fetch(`${url}/api/social`).then((res) => {return res.json()});
     const socials: Social[] = res;
     return socials;
 }
 
 async function fetchExperience(url: any) {
-    const res = await fetch("http://localhost:3000/api/experience").then((res) => {return res.json()});
+    const res = await fetch(`${url}/api/experience`).then((res) => {return res.json()});
     const skills: Experience[] = res;
     return skills;
 }
 
 async function fetchProject(url: any) {
-    const res = await fetch("http://localhost:3000/api/project").then((res) => {return res.json()});
+    const res = await fetch(`${url}/api/project`).then((res) => {return res.json()});
     const skills: Project[] = res;
     return skills;
 }
