@@ -1,7 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
-import { send } from "../actions";
 import { useFormState } from "react-dom";
+import { send } from "../actions";
+import { PhoneIcon, EnvelopeIcon, MapPinIcon } from "@heroicons/react/16/solid";
 
 const initialState = {
   success: false,
@@ -16,9 +17,9 @@ export default function Contact({}: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="h-screen max-w-full z-0
+      className="h-screen z-0
   flex flex-col relative overflow-hidden px-10 justify-evenly mx-auto items-center
-  text-left  
+  text-left
   md:flex-row"
     >
       <h3 className="absolute top-24 uppercase tracking-[20px] text-secondary-500 text-2xl">
@@ -52,11 +53,11 @@ export default function Contact({}: Props) {
             className="flex flex-col space-y-2 w-fit mx-auto"
             action={formAction}
           >
-            <div className="flex space-x-2">
+            <div className="flex flex-col md:flex-row md:space-x-2">
               <input
                 name="name"
                 type="text"
-                className="contactInput"
+                className="contactInput mb-2 md:mb-0"
                 placeholder="Name"
               ></input>
               <input

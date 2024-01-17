@@ -1,5 +1,9 @@
 import type { Config } from 'tailwindcss'
 import colors from 'tailwindcss/colors'
+import { customColors } from './customColors'
+
+const currentColors = {...colors, ...customColors};
+
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -15,13 +19,15 @@ const config: Config = {
       },
     },
     colors: {
-      ...colors,
-      primary: colors.blue,
-      secondary: colors.cyan,
-      background: colors.gray,
-      mainText: colors.white
+      ...currentColors,
+      primary: currentColors.blue,
+      secondary: currentColors.cyan,
+      background: currentColors.gray,
+      mainText: currentColors.white,
     }
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
 }
 export default config

@@ -18,8 +18,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className=" bg-background-700 text-mainText h-screen 
-      snap-y snap-mandatory overflow-scroll z-0"
+      className="h-screen z-0 bg-background-700 text-mainText 
+      snap-y snap-mandatory overflow-y-scroll overflow-x-hidden
+      scrollbar scrollbar-track-background-400/20 scrollbar-thumb-secondary-500"
     >
       <body className={inter.className}>{children}</body>
     </html>

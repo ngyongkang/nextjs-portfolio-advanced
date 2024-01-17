@@ -22,7 +22,8 @@ export default function Projects({}: Props) {
 
       <div
         className="w-full z-20 
-      relative flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory"
+      relative flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory
+      scrollbar-thin scrollbar-track-background-400/20 scrollbar-thumb-secondary-500"
       >
         {projects.map(function (project, index) {
           return (
