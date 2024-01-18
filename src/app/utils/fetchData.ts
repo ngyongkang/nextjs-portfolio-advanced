@@ -33,7 +33,6 @@ async function fetchProject(url: any) {
 
 async function fetchPageInfo(url: any) {
     const res = await fetch(`${url}/api/pageinfo`);
-    console.log(res);
     const data = await res.json();
 
     const pageInfo: PageInfo = data;

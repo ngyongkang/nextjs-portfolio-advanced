@@ -1,8 +1,8 @@
 import { groq } from "next-sanity";
-import { client } from "../../../../sanity/lib/client";
+import { getClient } from "../../../../sanity/lib/client";
 import { Experience } from "../../../../typings";
 
-
+const client = getClient();
 
 async function GET(request: Request) {
     const query = groq`

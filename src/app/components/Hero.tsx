@@ -21,7 +21,7 @@ export default function Hero({ pageInfo }: Props) {
     >
       <BackgroundCircles />
       <Image
-        src={urlForImage(pageInfo?.heroImage)}
+        src={urlForImage(pageInfo.heroImage)!}
         alt="hero image"
         className="relative rounded-full mx-auto pb-5"
         height={128}
