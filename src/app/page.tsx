@@ -13,6 +13,7 @@ import Homepage from "./Homepage";
 export default async function Page() {
   const headersList = headers();
   const fullUrl = headersList.get("referer");
+  // const fullUrl = process.env.SANITY_STUDIO_BASE_URL;
 
   const pageInfo: PageInfo = await fetchPageInfo(fullUrl);
   const experiences: Experience[] = await fetchExperience(fullUrl);
@@ -20,7 +21,6 @@ export default async function Page() {
   const projects: Project[] = await fetchProject(fullUrl);
   const socials: Social[] = await fetchSocial(fullUrl);
 
-  // const data = await getData();
   return (
     <Homepage
       pageInfo={pageInfo}
