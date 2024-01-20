@@ -59,12 +59,14 @@ export default function Contact({}: Props) {
                 type="text"
                 className="contactInput mb-2 md:mb-0"
                 placeholder="Name"
+                autoComplete="off"
               ></input>
               <input
                 name="email"
                 type="email"
                 className="contactInput"
                 placeholder="Email"
+                autoComplete="off"
               ></input>
             </div>
             <input
@@ -72,11 +74,13 @@ export default function Contact({}: Props) {
               type="text"
               className="contactInput"
               placeholder="Subject"
+              autoComplete="off"
             ></input>
             <textarea
               name="message"
               className="contactInput"
               placeholder="Message"
+              autoComplete="off"
             />
             <button
               type="submit"

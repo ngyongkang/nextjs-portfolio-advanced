@@ -45,6 +45,7 @@ export default function ExperienceCard({ experience }: Props) {
           {technologies.map(function (skill, index) {
             return (
               <i
+                title={skill.title}
                 key={index}
                 className={`${skill.icon} w-6 h-6 md:w-10 md:h-10 text-4xl rounded-full`}
               />

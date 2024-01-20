@@ -9,7 +9,7 @@ type Props = {
 
 export default function Skill({ skill }: Props) {
   const [aniState, setAniState] = React.useState(false);
-  const { direction, icon, progress } = skill;
+  const { direction, icon, progress, title } = skill;
   return (
     <div className="group relative flex cursor-pointer">
       <motion.i
