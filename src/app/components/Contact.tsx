@@ -26,8 +26,8 @@ export default function Contact({}: Props) {
         Contact
       </h3>
 
-      <div className="flex flex-col space-y-10">
-        <h4 className="text-2xl font-semibold text-center">
+      <div className="flex flex-col space-y-3 mt-12 md:mt-0 md:space-y-10 lg:mt-0">
+        <h4 className="text-xl md:text-2xl font-semibold text-center">
           Now that you know about me,{" "}
           <span className="underline decoration-primary-500">
             Shoot me a message

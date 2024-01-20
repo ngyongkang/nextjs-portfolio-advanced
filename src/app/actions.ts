@@ -1,6 +1,5 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
 import { Resend } from 'resend';
 import { EmailTemplate } from '@/app/components/EmailTemplate';
 
@@ -28,8 +27,6 @@ async function send(prevState: any, formData: FormData) {
     return prevState;
   }
     
-    
-  revalidatePath("/");
   prevState.success = true;
   return prevState;
 }

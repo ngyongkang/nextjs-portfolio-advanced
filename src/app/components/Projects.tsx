@@ -58,8 +58,12 @@ function ProjectComponent({ project }: Props2) {
         alt="project image"
       />
       <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-        <h4 className="text-4xl font-semibold text-center">{project.title}</h4>
-        <p className="text-lg text-center md:text-left">{project.summary}</p>
+        <h4 className="sm:text-xl md:text-4xl font-semibold text-center">
+          {project.title}
+        </h4>
+        <p className="sm:text-base md:text-lg text-center md:text-left">
+          {project.summary}
+        </p>
       </div>
     </div>
   );

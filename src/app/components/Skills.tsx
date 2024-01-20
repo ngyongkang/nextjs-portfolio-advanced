@@ -25,16 +25,9 @@ export default function Skills({ skills }: Props) {
         Hover over a skill for current proficiency
       </h3>
 
-      <div className="grid grid-cols-4 gap-5 grid-flow-row">
+      <div className="mt-10 md:mt-0 grid grid-cols-4 gap-5 grid-flow-row">
         {skills.map(function (skill, index) {
-          return (
-            <SkillComponent
-              key={index}
-              icon={skill.icon}
-              direction={skill.direction}
-              proficiency={skill.progress}
-            />
-          );
+          return <SkillComponent key={index} skill={skill} />;
         })}
       </div>
     </motion.div>

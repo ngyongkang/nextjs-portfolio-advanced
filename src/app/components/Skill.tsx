@@ -1,10 +1,15 @@
 "use Client";
-import React from "react";
 import { motion } from "framer-motion";
-import { SkillProps } from "../data/types";
+import React from "react";
+import { Skill } from "../../../typings";
 
-export default function Skill({ direction, icon, proficiency }: SkillProps) {
+type Props = {
+  skill: Skill;
+};
+
+export default function Skill({ skill }: Props) {
   const [aniState, setAniState] = React.useState(false);
+  const { direction, icon, progress } = skill;
   return (
     <div className="group relative flex cursor-pointer">
       <motion.i
@@ -18,7 +23,7 @@ export default function Skill({ direction, icon, proficiency }: SkillProps) {
         viewport={{ once: true }}
         onAnimationComplete={() => setAniState(true)}
         className={`${icon}
-                    w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32
+                    w-16 h-16 md:w-28 md:h-28 lg:w-32 lg:h-32
                     rounded-full border border-secondary-500 border-opacity-20
                     absolute flex text-center justify-center items-center
                     text-5xl md:text-6xl lg:text-7xl
@@ -27,7 +32,7 @@ export default function Skill({ direction, icon, proficiency }: SkillProps) {
       {/* IDEA Add a border around based on percent of skill,
           also do number animation from previous project. */}
       <div
-        className={`w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 z-0
+        className={`w-16 h-16 md:w-28 md:h-28 lg:w-32 lg:h-32 z-0
                    rounded-full 
                    abosolute opacity-0  
                    ${
@@ -41,7 +46,7 @@ export default function Skill({ direction, icon, proficiency }: SkillProps) {
             className="sm:text-2xl md:text-3xl 
           font-bold text-secondary-500 opacity-100"
           >
-            {proficiency}
+            {progress}
           </p>
         </div>
       </div>
