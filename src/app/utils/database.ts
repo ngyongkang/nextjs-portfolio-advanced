@@ -1,5 +1,4 @@
 import { groq } from "next-sanity";
-import { Experience, PageInfo, Project, Skill, Social } from "../../../typings";
 import { getClient } from "../../../sanity/lib/client";
 
 const client = getClient();
