@@ -12,7 +12,8 @@ export default function About({ pageInfo }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="flex flex-col relative h-screen items-center text-center max-w-7xl px-18 justify-evenly mr-10 ml-10
+      className="h-screen max-w-7xl px-18  mr-10 ml-10
+                 relative flex flex-col justify-evenly text-center items-center
                  md:text-left md:flex-row"
     >
       <h3 className="absolute top-24 uppercase tracking-[20px] text-secondary-500 text-2xl">
