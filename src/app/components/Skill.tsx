@@ -7,7 +7,7 @@ type Props = {
   skill: Skill;
 };
 
-export default function Skill({ skill }: Props) {
+export default function SkillComponent({ skill }: Props) {
   const [aniState, setAniState] = React.useState(false);
   const { direction, icon, progress, title } = skill;
   return (

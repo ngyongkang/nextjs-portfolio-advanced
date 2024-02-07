@@ -32,7 +32,7 @@ export default function Contact({}: Props) {
           <span className="underline decoration-primary-500">
             Shoot me a message
           </span>{" "}
-          if you found what your looking for.
+          if you found what you are looking for.
         </h4>
 
         <div className="space-y-10">

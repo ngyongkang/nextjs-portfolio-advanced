@@ -1,7 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
-import { Project } from "../../../typings";
 import { urlForImage } from "../../../sanity/lib/image";
+import { Project } from "../../../typings";
+import Link from "next/link";
 
 type Props = { projects: Project[] };
 
@@ -49,18 +50,36 @@ function ProjectComponent({ project }: Props2) {
       flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center 
       p-20 md:p44"
     >
-      <motion.img
-        initial={{ opacity: 0, y: -300 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.5 }}
-        viewport={{ once: true }}
-        src={urlForImage(project?.image)}
-        alt="project image"
-      />
+      <Link
+        href={project.linkToBuild}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <motion.img
+          initial={{ opacity: 0, y: -300 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.5 }}
+          viewport={{ once: true }}
+          src={urlForImage(project?.image)}
+          alt="project image"
+        />
+      </Link>
+
       <div className="space-y-10 px-0 md:px-10 max-w-6xl">
         <h4 className="sm:text-xl md:text-4xl font-semibold text-center">
           {project.title}
         </h4>
+        <div>
+          {project.technologies.map(function (technology, index) {
+            return (
+              <i
+                key={index}
+                className={`${technology.icon} mr-2 sm:text-xl md:text-4xl`}
+                title={technology.title}
+              />
+            );
+          })}
+        </div>
         <p className="sm:text-base md:text-lg text-center md:text-left">
           {project.summary}
         </p>
