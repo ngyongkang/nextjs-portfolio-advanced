@@ -12,9 +12,9 @@ export default function About({ pageInfo }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="h-screen max-w-7xl px-18  mr-10 ml-10
+      className="h-screen px-18  mr-10 ml-10
                  relative flex flex-col justify-evenly text-center items-center
-                 md:text-left md:flex-row"
+                 lg:text-left lg:flex-row"
     >
       <h3 className="absolute top-24 uppercase tracking-[20px] text-secondary-500 text-2xl">
         About
@@ -28,11 +28,11 @@ export default function About({ pageInfo }: Props) {
         src={urlForImage(pageInfo?.profilePic)}
         className="w-40 h-40 mt-[5rem]
         flex-shrink-0 rounded-full object-cover
-        md:rounded-lg md:mt-0 md:mb-0 md:w-64 md:h-96 md:ml-20
-        xl:mt-0 xl:-mb-20 xl:w-[500px] xl:h-[600px]"
+        lg:rounded-lg lg:mt-0 lg:mb-0 lg:w-64 lg:h-80 lg:ml-20
+        xl:mt-0 xl:-mb-20 xl:w-[30%] xl:h-[50%]"
       />
-      <div className="space-y-4 md:space-y-10 px-0 md:px-10">
-        <h4 className="text-base md:text-4xl font-semibold">
+      <div className="space-y-4 lg:space-y-10 px-0 lg:px-10">
+        <h4 className="text-base lg:text-4xl font-semibold">
           Here is a{" "}
           <span className="underline decoration-primary-500">little</span>{" "}
           background
