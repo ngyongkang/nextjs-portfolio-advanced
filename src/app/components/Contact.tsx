@@ -30,9 +30,9 @@ export default function Contact({}: Props) {
         <h4 className="text-xl md:text-2xl font-semibold text-center">
           Now that you know about me,{" "}
           <span className="underline decoration-primary-500">
-            Shoot me a message
+            shoot me a message
           </span>{" "}
-          if you found what you are looking for.
+          if you found what you were looking for.
         </h4>
 
         <div className="space-y-10">
